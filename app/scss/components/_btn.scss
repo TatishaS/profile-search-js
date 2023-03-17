@@ -1,0 +1,26 @@
+.btn {
+  min-width: 20.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  padding: 1.6rem 1.2rem;
+  background: #28c079;
+  color: #ffffff;
+  border-radius: 0.4rem;
+
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    background: #229c63;
+    color: #ffffff;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.6rem lightgreen;
+  }
+}

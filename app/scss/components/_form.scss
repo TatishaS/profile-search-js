@@ -1,0 +1,50 @@
+.form {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.2rem;
+
+  &__input {
+    width: 100%;
+    padding: 1.8rem 6rem;
+    background-image: url('../../images/search.svg');
+    background-repeat: no-repeat;
+    background-position: 2.3rem center;
+    background-size: 1.5rem;
+    background-color: #1f2a48;
+    border: 0.1rem solid #003670;
+    border-radius: 1rem;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    color: #fff;
+  }
+
+  &__input::placeholder {
+    color: #fff;
+  }
+
+  &__btn {
+    position: absolute;
+    right: 0.8rem;
+    top: 0.7rem;
+    background-color: #007afe;
+    padding: 1.1rem 2.4rem;
+    border: 0.1rem solid #3797ff;
+    border-radius: 10px;
+    box-shadow: 0.1rem 1rem 1.5rem rgba(0, 122, 254, 0.4);
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &__btn:disabled {
+    background-color: #e9eef3af;
+    border: 0.1rem solid #3797ff;
+
+    box-shadow: 0 1rem 1.5rem rgba(107, 111, 116, 0.4);
+  }
+}

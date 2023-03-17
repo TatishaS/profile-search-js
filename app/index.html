@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.min.css" />
+    <script defer src="js/main.min.js"></script>
+    <title>Поиск профиля Github</title>
+  </head>
+
+  <body>
+    <main class="main">
+      <section class="github">
+        <div class="container">
+          <div class="wrapper">
+            <div class="app-container">
+              <form class="form" type="submit">
+                <input
+                  type="text"
+                  class="form__input"
+                  placeholder="Укажите название профиля GitHub"
+                />
+                <button class="form__btn" type="submit">Найти</button>
+              </form>
+
+              <div class="users">
+                <!--   Сообщение об ошибке -->
+                <!--   <div className="user__info">
+                  <h2>Ничего не найдено</h2>
+                </div> -->
+                <ul class="users__list">
+                  <!-- <li class="users__list-item">
+                    <div class="user">
+                      <div class="user__info">
+                        <div class="user__image">
+                          <img
+                            width="100"
+                            src="./images/avatar.png"
+                            alt="Аватар пользователя"
+                          />
+                        </div>
+                        <div class="user__data">
+                          <h1 class="user__name">
+                            Имя
+                            <span>@Логин</span>
+                          </h1>
+                          <p class="user__about">Bio</p>
+                        </div>
+                      </div>
+                      <ul class="user__stats">
+                        <li class="user__stats-item">
+                          Репозитории
+                          <span>Публичные репозитории</span>
+                        </li>
+                        <li class="user__stats-item">
+                          Подписчиков
+                          <span>1000k</span>
+                        </li>
+                        <li class="user__stats-item">
+                          Подписок
+                          <span>52</span>
+                        </li>
+                      </ul>
+                      <ul class="user__location">
+                        <li class="user__location-item">Самара</li>
+                        <li class="user__location-item">
+                          <a href="#">Ссылка на блог</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

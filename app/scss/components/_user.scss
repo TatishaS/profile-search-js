@@ -1,0 +1,99 @@
+.user {
+  padding: 3.5rem;
+  background-color: #1f2a48;
+  border: 0.1rm solid #003670;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+
+  &__info {
+    display: flex;
+    margin-bottom: 2.5rem;
+  }
+
+  &__image {
+    margin-right: 2.4rem;
+    object-fit: cover;
+  }
+
+  &__name {
+    margin-bottom: 1.6rem;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    color: #fff;
+  }
+
+  &__name span {
+    display: block;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    color: #007afe;
+  }
+
+  &__about {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  &__stats {
+    display: flex;
+
+    margin-bottom: 2.2rem;
+    list-style: none;
+    border-radius: 1rem;
+    background-color: #141c2f;
+  }
+
+  &__stats-item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 1rem 2.8rem;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    border-right: 0.1rem solid #1f2a48;
+  }
+
+  &__stats-item:last-child {
+    border-right: 0;
+  }
+
+  &__stats-item span {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    color: #ffffff;
+  }
+
+  &__location {
+    list-style: none;
+  }
+
+  &__location-item {
+    padding-left: 2.6rem;
+    margin-bottom: 1.7rem;
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    letter-spacing: -0.02em;
+    background-image: url('../../images/location.svg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 1.6rem;
+  }
+
+  &__location-item:last-child {
+    background-image: url('../../images/link.svg');
+  }
+
+  &__location-item a {
+    text-decoration: none;
+    color: var(--main-color);
+    transition: color 0.3s ease-in-out;
+  }
+
+  &__location-item a:hover {
+    color: #fff;
+  }
+}
