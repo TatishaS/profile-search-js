@@ -4,6 +4,7 @@ const form = document.querySelector('.form');
 const formInput = form.querySelector('.form__input');
 const formBtn = form.querySelector('.form__btn');
 const usersList = document.querySelector('.users__list');
+const usersContainer = document.querySelector('.users');
 
 const urlUsers = 'https://api.github.com/search/users?q=';
 const urlUser = 'https://api.github.com/users/';
@@ -17,15 +18,9 @@ const getData = async searchQuery => {
     );
 
     const users = items.map(item => item.login);
-
     getUsers(users);
-
-    console.log(items);
-    console.log(users);
   } catch (err) {
-    // Выводим ошибку пользователю
-
-    // и заодно в консоли
+    alert(err);
     console.error(err);
     throw err;
   }
@@ -51,12 +46,27 @@ const getUsers = async names => {
   }
 
   users = await Promise.all(responses);
-  console.log(users);
+
   checkEmptyList();
 
   users.map(item => renderCard(item));
+};
 
-  return users;
+const handleFormSubmit = () => {
+  const querySubstring = formInput.value;
+
+  if (querySubstring.length < 3) {
+    usersList.style.display = 'none';
+
+    formInput.parentElement.insertAdjacentHTML(
+      'beforeend',
+      `<span class="alert">Недостаточно символов для поиска</span>`
+    );
+    return;
+  }
+
+  getData(querySubstring);
+  formInput.value = '';
 };
 
 const renderCard = user => {
@@ -80,7 +90,9 @@ const renderCard = user => {
                           Имя
                           <a href=${user.html_url}>@${user.login}</a>
                         </h1>
-                        <p class="user__about">${user.bio}</p>
+                        <p class="user__about">${
+                          user.bio && user.bio !== null ? user.bio : ''
+                        }</p>
                       </div>
                     </div>
                     <ul class="user__stats">
@@ -98,9 +110,11 @@ const renderCard = user => {
                       </li>
                     </ul>
                     <ul class="user__location">
-                      <li class="user__location-item">${user.location}</li>
+                      <li class="user__location-item">${
+                        user.location ? user.location : 'Локация не опознана'
+                      }</li>
                       <li class="user__location-item">
-                        <a href="#">${user.blog}</a>
+                        <a href="#">${user.blog ? user.blog : ''}</a>
                       </li>
                     </ul>
                   </div>
@@ -109,6 +123,8 @@ const renderCard = user => {
 
   usersList.insertAdjacentHTML('beforeend', cardHTML);
 };
+
+/* Helpers */
 
 const clearAlert = () => {
   const alert = form.querySelector('.alert');
@@ -122,7 +138,7 @@ const checkEmptyList = () => {
     const emptyListHTML = `<div className="user__info" id="emptyList">
     <h2>Ничего не найдено</h2>
   </div>`;
-    users.insertAdjacentHTML('afterbegin', emptyListHTML);
+    usersContainer.insertAdjacentHTML('afterbegin', emptyListHTML);
   }
 
   if (users.length > 0) {
@@ -133,24 +149,8 @@ const checkEmptyList = () => {
   usersList.style.display = 'block';
   usersList.textContent = '';
 };
-const handleFormSubmit = () => {
-  const querySubstring = formInput.value;
-  console.log(querySubstring);
 
-  if (querySubstring.length < 3) {
-    usersList.style.display = 'none';
-
-    formInput.parentElement.insertAdjacentHTML(
-      'beforeend',
-      `<span class="alert">Недостаточно символов для поиска</span>`
-    );
-    return;
-  }
-
-  getData(querySubstring);
-  formInput.value = '';
-};
-
+/* Handlers */
 form.addEventListener('submit', e => {
   e.preventDefault();
   handleFormSubmit();
