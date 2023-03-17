@@ -57,7 +57,7 @@ const getUsers = async names => {
 
   users.map(item => renderCard(item));
 
-  return results;
+  return users;
 };
 
 const renderCard = user => {
@@ -130,6 +130,8 @@ const checkEmptyList = () => {
     const emptyListEl = document.querySelector('#emptyList');
     emptyListEl ? emptyListEl.remove() : null;
   }
+
+  usersList.textContent = '';
 };
 const handleFormSubmit = () => {
   const querySubstring = formInput.value;
