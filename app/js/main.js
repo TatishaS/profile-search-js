@@ -22,7 +22,6 @@ const getData = async searchQuery => {
 
     console.log(items);
     console.log(users);
-    usersList.style.display = 'block';
   } catch (err) {
     // Выводим ошибку пользователю
 
@@ -131,6 +130,7 @@ const checkEmptyList = () => {
     emptyListEl ? emptyListEl.remove() : null;
   }
 
+  usersList.style.display = 'block';
   usersList.textContent = '';
 };
 const handleFormSubmit = () => {
