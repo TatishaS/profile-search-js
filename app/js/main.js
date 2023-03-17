@@ -88,7 +88,9 @@ const renderCard = user => {
                       <div class="user__data">
                         <h1 class="user__name">
                           Имя
-                          <a href=${user.html_url}>@${user.login}</a>
+                          <a href=${user.html_url} target="_blank">@${
+    user.login
+  }</a>
                         </h1>
                         <p class="user__about">${
                           user.bio && user.bio !== null ? user.bio : ''
